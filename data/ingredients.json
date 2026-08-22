@@ -1,0 +1,21 @@
+{
+  "ingredients": [
+    {
+      "id": "niacinamide",
+      "name": "Niacinamide",
+      "inci": "Niacinamide",
+      "cas": "98-92-0",
+      "category": "Active",
+      "aliases": [
+        "Nicotinamide",
+        "Vitamin B3"
+      ],
+      "page": "ingredients/niacinamide.html",
+      "supplierIds": [
+        "dsm-firmenich-niacinamide-pc",
+        "makingcosmetics-niacinamide",
+        "puriphase-niacinamide"
+      ]
+    }
+  ]
+}
