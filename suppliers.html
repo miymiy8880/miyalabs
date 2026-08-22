@@ -1,39 +1,72 @@
 <!doctype html>
+
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cosmetic Ingredient Suppliers | Miya Labs</title>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Cosmetic Ingredient Suppliers | Miya Labs
+  </title>
 
   <meta
     name="description"
-    content="Explore cosmetic ingredient manufacturers, distributors, and suppliers by ingredient and category."
+    content="Search cosmetic ingredient manufacturers and suppliers by ingredient and supplier type."
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
 
 <body>
 
+
 <header class="site-header">
 
-  <a class="brand" href="index.html">
+  <a
+    class="brand"
+    href="index.html"
+  >
     MIYA<span>LABS</span>
   </a>
 
+
   <nav>
-    <a href="ingredients.html">Ingredients</a>
-    <a href="index.html#formulation">Formulation</a>
-    <a href="suppliers.html">Suppliers</a>
-    <a href="index.html#guides">Guides</a>
+
+    <a href="ingredients.html">
+      Ingredients
+    </a>
+
+    <a href="index.html#formulation">
+      Formulation
+    </a>
+
+    <a href="suppliers.html">
+      Suppliers
+    </a>
+
+    <a href="index.html#guides">
+      Guides
+    </a>
+
   </nav>
 
 </header>
 
 
+
 <main>
+
 
 <section class="hero">
 
@@ -41,304 +74,114 @@
     MIYA LABS SUPPLIER DIRECTORY
   </p>
 
+
   <h1>
-    Find the right
+
+    Find your
     <em>ingredient source.</em>
+
   </h1>
 
+
   <p class="hero-copy">
-    A developing directory of cosmetic ingredient manufacturers,
-    distributors, and specialty suppliers.
+
+    Search manufacturers and suppliers
+    of cosmetic raw materials.
+
   </p>
+
+
+  <div class="supplier-search">
+
+    <input
+      id="supplier-search"
+      type="search"
+      placeholder="Search an ingredient or supplier..."
+      aria-label="Search suppliers"
+    >
+
+
+    <select
+      id="supplier-type"
+      aria-label="Filter supplier type"
+    >
+
+      <option value="all">
+        All supplier types
+      </option>
+
+      <option value="manufacturer">
+        Manufacturers
+      </option>
+
+      <option value="supplier">
+        Suppliers
+      </option>
+
+      <option value="B2B supplier">
+        B2B suppliers
+      </option>
+
+    </select>
+
+  </div>
 
 </section>
 
 
+
 <section class="section">
+
 
   <div class="section-heading">
 
     <div>
+
       <p class="eyebrow">
         DIRECTORY
       </p>
 
+
       <h2>
-        Explore suppliers
+        Supplier database
       </h2>
+
     </div>
 
-    <p>
-      Compare suppliers by ingredient, category,
-      geography, and business type.
-    </p>
-
-  </div>
-
-
-  <div class="cards">
-
-    <article class="card">
-
-      <span>01</span>
-
-      <h3>
-        Active ingredients
-      </h3>
-
-      <p>
-        Suppliers of cosmetic actives, including
-        vitamins, botanical extracts, peptides,
-        and functional actives.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>02</span>
-
-      <h3>
-        Emulsifiers
-      </h3>
-
-      <p>
-        Raw materials used to create and stabilize
-        emulsions and cosmetic formulations.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>03</span>
-
-      <h3>
-        Preservatives
-      </h3>
-
-      <p>
-        Cosmetic preservation systems and
-        antimicrobial ingredients.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>04</span>
-
-      <h3>
-        Humectants
-      </h3>
-
-      <p>
-        Ingredients used to attract and retain
-        water within cosmetic formulations.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>05</span>
-
-      <h3>
-        Emollients
-      </h3>
-
-      <p>
-        Oils, esters, hydrocarbons, and other
-        materials used to modify skin feel.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>06</span>
-
-      <h3>
-        Thickeners
-      </h3>
-
-      <p>
-        Polymers, gums, and other rheology-modifying
-        ingredients.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<section class="feature">
-
-  <div>
-
-    <p class="eyebrow">
-      SUPPLIER DATABASE
-    </p>
-
-    <h2>
-      Search by ingredient.
-    </h2>
 
     <p>
-      Eventually, you'll be able to search an ingredient
-      and see manufacturers, distributors, grades,
-      regions served, technical documentation,
-      and purchasing information.
+
+      Supplier information is organized
+      by ingredient, company type,
+      product, grade, and geography.
+
     </p>
 
   </div>
 
 
-  <div class="formula-mark">
 
-    S
+  <div
+    id="supplier-results"
+    class="supplier-results"
+  >
 
-    <small>
-      SOURCE
-    </small>
+    <div class="directory-placeholder">
+
+      <strong>
+        Loading suppliers...
+      </strong>
+
+    </div>
 
   </div>
 
-</section>
-
-
-<section class="section">
-
-  <p class="eyebrow">
-    SUPPLIER PROFILE
-  </p>
-
-  <h2>
-    What we'll track
-  </h2>
-
-
-  <div class="guide-list">
-
-    <a href="#">
-      <span>01</span>
-
-      <strong>
-        Manufacturer
-      </strong>
-
-      <small>
-        Original producer of the raw material
-      </small>
-    </a>
-
-
-    <a href="#">
-      <span>02</span>
-
-      <strong>
-        Distributor
-      </strong>
-
-      <small>
-        Regional or international distribution
-      </small>
-    </a>
-
-
-    <a href="#">
-      <span>03</span>
-
-      <strong>
-        Ingredient grade
-      </strong>
-
-      <small>
-        Cosmetic, pharmaceutical, food, or other relevant grade
-      </small>
-    </a>
-
-
-    <a href="#">
-      <span>04</span>
-
-      <strong>
-        Documentation
-      </strong>
-
-      <small>
-        Technical data sheets, specifications, SDS, and certificates
-      </small>
-    </a>
-
-
-    <a href="#">
-      <span>05</span>
-
-      <strong>
-        Geography
-      </strong>
-
-      <small>
-        Manufacturing location and markets served
-      </small>
-    </a>
-
-  </div>
 
 </section>
 
-
-<section class="section">
-
-  <p class="eyebrow">
-    FOR SUPPLIERS
-  </p>
-
-  <h2>
-    Want your company listed?
-  </h2>
-
-  <p class="hero-copy">
-    Supplier profiles will eventually allow manufacturers
-    and distributors to submit their company and
-    ingredient information for review.
-  </p>
-
-</section>
 
 </main>
+
 
 
 <footer>
@@ -347,24 +190,40 @@
     MIYA<span>LABS</span>
   </div>
 
+
   <p>
     Cosmetic ingredients · formulation · supplier intelligence
   </p>
 
+
   <div class="footer-links">
 
-    <a href="index.html">Home</a>
-    <a href="ingredients.html">Ingredients</a>
-    <a href="suppliers.html">Suppliers</a>
-    <a href="#">Privacy</a>
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="ingredients.html">
+      Ingredients
+    </a>
+
+    <a href="suppliers.html">
+      Suppliers
+    </a>
 
   </div>
 
+
   <small>
-    © 2026 Miya Labs. Educational content only; not medical advice.
+    © 2026 Miya Labs.
   </small>
 
 </footer>
 
+
+
+<script src="suppliers.js"></script>
+
+
 </body>
+
 </html>
