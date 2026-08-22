@@ -12,12 +12,13 @@
   >
 
   <title>
-    Cosmetic Ingredient Database | Miya Labs
+    Ingredient | Miya Labs
   </title>
 
   <meta
+    id="meta-description"
     name="description"
-    content="Search the Miya Labs cosmetic ingredient database by ingredient name, INCI name, CAS number, or category."
+    content="Cosmetic ingredient information from Miya Labs."
   >
 
   <link
@@ -70,70 +71,25 @@
 
 <section class="hero">
 
-  <p class="eyebrow">
-    MIYA LABS INGREDIENT DATABASE
+  <p
+    class="eyebrow"
+    id="ingredient-category"
+  >
+    INGREDIENT
   </p>
 
 
-  <h1>
-
-    Search
-    <em>ingredients.</em>
-
+  <h1 id="ingredient-name">
+    Loading...
   </h1>
 
 
-  <p class="hero-copy">
-
-    Search cosmetic ingredients by name,
-    INCI name, CAS number, category,
-    or common alias.
-
+  <p
+    class="hero-copy"
+    id="ingredient-description"
+  >
+    Loading ingredient information...
   </p>
-
-
-  <div class="supplier-search">
-
-    <input
-      id="ingredient-search"
-      type="search"
-      placeholder="Search niacinamide, CAS 98-92-0..."
-      aria-label="Search ingredients"
-    >
-
-
-    <select
-      id="ingredient-category"
-      aria-label="Filter ingredients by category"
-    >
-
-      <option value="all">
-        All categories
-      </option>
-
-      <option value="Active">
-        Actives
-      </option>
-
-      <option value="Humectant">
-        Humectants
-      </option>
-
-      <option value="Emollient">
-        Emollients
-      </option>
-
-      <option value="Preservative">
-        Preservatives
-      </option>
-
-      <option value="Emulsifier">
-        Emulsifiers
-      </option>
-
-    </select>
-
-  </div>
 
 </section>
 
@@ -142,46 +98,210 @@
 <section class="section">
 
 
-  <div class="section-heading">
-
-    <div>
-
-      <p class="eyebrow">
-        DATABASE
-      </p>
+  <p class="eyebrow">
+    CHEMICAL IDENTITY
+  </p>
 
 
-      <h2>
-        Ingredients
-      </h2>
-
-    </div>
+  <h2>
+    At a glance
+  </h2>
 
 
-    <p>
+  <div class="cards">
 
-      Each ingredient connects to its
-      technical profile and associated
-      suppliers.
 
+    <article class="card">
+
+      <span>
+        INCI
+      </span>
+
+      <h3 id="ingredient-inci">
+        —
+      </h3>
+
+    </article>
+
+
+    <article class="card">
+
+      <span>
+        CAS
+      </span>
+
+      <h3 id="ingredient-cas">
+        —
+      </h3>
+
+    </article>
+
+
+    <article class="card">
+
+      <span>
+        CATEGORY
+      </span>
+
+      <h3 id="ingredient-category-card">
+        —
+      </h3>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<section class="feature">
+
+
+  <div>
+
+    <p class="eyebrow">
+      INGREDIENT OVERVIEW
+    </p>
+
+
+    <h2 id="overview-title">
+      About this ingredient
+    </h2>
+
+
+    <p id="overview-text">
+      Loading...
     </p>
 
   </div>
 
 
+  <div
+    class="formula-mark"
+    aria-hidden="true"
+  >
+
+    <span id="ingredient-symbol">
+      M
+    </span>
+
+    <small>
+      LAB
+    </small>
+
+  </div>
+
+
+</section>
+
+
+
+<section class="section">
+
+
+  <p class="eyebrow">
+    SUPPLIER INTELLIGENCE
+  </p>
+
+
+  <h2>
+    Where can you source it?
+  </h2>
+
+
+  <p class="hero-copy">
+
+    Suppliers connected to this ingredient
+    are pulled from the Miya Labs supplier
+    database.
+
+  </p>
+
 
   <div
-    id="ingredient-results"
+    id="ingredient-suppliers"
     class="supplier-results"
   >
 
     <div class="directory-placeholder">
 
       <strong>
-        Loading ingredients...
+        Loading suppliers...
       </strong>
 
     </div>
+
+  </div>
+
+
+</section>
+
+
+
+<section class="section">
+
+
+  <p class="eyebrow">
+    ALIASES
+  </p>
+
+
+  <h2>
+    Also known as
+  </h2>
+
+
+  <div
+    id="ingredient-aliases"
+    class="cards"
+  >
+  </div>
+
+
+</section>
+
+
+
+<section class="section">
+
+
+  <p class="eyebrow">
+    TECHNICAL SOURCES
+  </p>
+
+
+  <h2>
+    References
+  </h2>
+
+
+  <div class="guide-list">
+
+
+    <a
+      href="https://pubchem.ncbi.nlm.nih.gov/"
+      target="_blank"
+      rel="noopener"
+    >
+
+      <span>
+        01
+      </span>
+
+
+      <strong>
+        PubChem
+      </strong>
+
+
+      <small>
+        Chemical information and identifiers
+      </small>
+
+    </a>
+
 
   </div>
 
@@ -230,7 +350,7 @@
 
 
 
-<script src="ingredients.js"></script>
+<script src="ingredient-page.js"></script>
 
 
 </body>
