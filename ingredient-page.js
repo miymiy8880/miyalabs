@@ -1,3 +1,6 @@
+const ingredientContainer =
+  document.getElementById("ingredient-suppliers");
+
 const nameElement =
   document.getElementById("ingredient-name");
 
@@ -14,9 +17,7 @@ const categoryElement =
   document.getElementById("ingredient-category");
 
 const categoryCardElement =
-  document.getElementById(
-    "ingredient-category-card"
-  );
+  document.getElementById("ingredient-category-card");
 
 const overviewTitleElement =
   document.getElementById("overview-title");
@@ -27,25 +28,20 @@ const overviewTextElement =
 const aliasesContainer =
   document.getElementById("ingredient-aliases");
 
-const supplierContainer =
-  document.getElementById("ingredient-suppliers");
-
 const metaDescription =
   document.getElementById("meta-description");
 
 
-
 function getIngredientId() {
 
-  const parameters =
+  const params =
     new URLSearchParams(
       window.location.search
     );
 
-  return parameters.get("id");
+  return params.get("id");
 
 }
-
 
 
 async function loadIngredient() {
@@ -57,7 +53,7 @@ async function loadIngredient() {
   if (!ingredientId) {
 
     showError(
-      "No ingredient was specified."
+      "No ingredient ID was provided."
     );
 
     return;
@@ -67,25 +63,14 @@ async function loadIngredient() {
 
   try {
 
-    const [
-      ingredientResponse,
-      supplierResponse
-    ] = await Promise.all([
-
-      fetch("data/ingredients.json"),
-
-      fetch("data/suppliers.json")
-
-    ]);
+    const ingredientResponse =
+      await fetch("./data/ingredients.json");
 
 
-    if (
-      !ingredientResponse.ok ||
-      !supplierResponse.ok
-    ) {
+    if (!ingredientResponse.ok) {
 
       throw new Error(
-        "Database could not be loaded."
+        "Could not load ingredients.json"
       );
 
     }
@@ -95,23 +80,44 @@ async function loadIngredient() {
       await ingredientResponse.json();
 
 
-    const supplierData =
-      await supplierResponse.json();
-
-
     const ingredient =
       ingredientData.ingredients.find(
-
-        item =>
-          item.id === ingredientId
-
+        item => item.id === ingredientId
       );
 
 
     if (!ingredient) {
 
       throw new Error(
-        "Ingredient not found."
+        `Ingredient "${ingredientId}" was not found in the database.`
+      );
+
+    }
+
+
+    let suppliers = [];
+
+
+    try {
+
+      const supplierResponse =
+        await fetch("./data/suppliers.json");
+
+
+      if (supplierResponse.ok) {
+
+        const supplierData =
+          await supplierResponse.json();
+
+        suppliers =
+          supplierData.suppliers || [];
+
+      }
+
+    } catch (supplierError) {
+
+      console.log(
+        "Supplier database unavailable."
       );
 
     }
@@ -119,11 +125,13 @@ async function loadIngredient() {
 
     renderIngredient(
       ingredient,
-      supplierData.suppliers
+      suppliers
     );
 
 
   } catch (error) {
+
+    console.error(error);
 
     showError(
       error.message
@@ -134,12 +142,10 @@ async function loadIngredient() {
 }
 
 
-
 function renderIngredient(
   ingredient,
   suppliers
 ) {
-
 
   document.title =
     `${ingredient.name} | Miya Labs`;
@@ -150,17 +156,15 @@ function renderIngredient(
 
 
   descriptionElement.textContent =
-
-    `${ingredient.name} (${ingredient.inci}) — `
-    + `cosmetic ingredient information, `
-    + `chemical identity, and supplier intelligence.`;
+    `${ingredient.name} cosmetic ingredient profile, `
+    + `including chemical identity and supplier information.`;
 
 
   metaDescription.setAttribute(
     "content",
-    `${ingredient.name} cosmetic ingredient profile, `
-    + `INCI ${ingredient.inci}, CAS ${ingredient.cas}, `
-    + `and supplier information.`
+    `${ingredient.name} cosmetic ingredient profile. `
+    + `INCI: ${ingredient.inci}. `
+    + `CAS: ${ingredient.cas}.`
   );
 
 
@@ -185,18 +189,15 @@ function renderIngredient(
 
 
   overviewTextElement.textContent =
-
-    `${ingredient.name} is a cosmetic ingredient `
-    + `listed in the Miya Labs ingredient database. `
-    + `Its properties, applications, formulation `
-    + `considerations, and commercial grades should `
-    + `be evaluated using appropriate technical `
-    + `documentation and authoritative sources.`;
-
+    `${ingredient.name} is included in the Miya Labs `
+    + `cosmetic ingredient database. Technical properties, `
+    + `formulation considerations, and commercial grades `
+    + `should be evaluated using appropriate technical `
+    + `documentation.`;
 
 
   renderAliases(
-    ingredient.aliases
+    ingredient.aliases || []
   );
 
 
@@ -208,15 +209,11 @@ function renderIngredient(
 }
 
 
-
 function renderAliases(
   aliases
 ) {
 
-  if (
-    !aliases ||
-    aliases.length === 0
-  ) {
+  if (aliases.length === 0) {
 
     aliasesContainer.innerHTML = `
       <article class="card">
@@ -230,7 +227,6 @@ function renderAliases(
 
 
   aliasesContainer.innerHTML =
-
     aliases.map(alias => `
 
       <article class="card">
@@ -250,21 +246,21 @@ function renderAliases(
 }
 
 
-
 function renderSuppliers(
   ingredient,
   suppliers
 ) {
 
+  const supplierIds =
+    ingredient.supplierIds || [];
+
 
   const connectedSuppliers =
     suppliers.filter(
-
       supplier =>
-        ingredient.supplierIds.includes(
+        supplierIds.includes(
           supplier.id
         )
-
     );
 
 
@@ -272,7 +268,7 @@ function renderSuppliers(
     connectedSuppliers.length === 0
   ) {
 
-    supplierContainer.innerHTML = `
+    ingredientContainer.innerHTML = `
 
       <div class="directory-placeholder">
 
@@ -294,8 +290,7 @@ function renderSuppliers(
   }
 
 
-  supplierContainer.innerHTML =
-
+  ingredientContainer.innerHTML =
     connectedSuppliers.map(
       supplier => `
 
@@ -320,10 +315,8 @@ function renderSuppliers(
 
 
           <p>
-
             Ingredients:
             ${supplier.ingredients.join(", ")}
-
           </p>
 
 
@@ -338,11 +331,9 @@ function renderSuppliers(
                     ${product.name}
                   </strong>
 
-
                   <span>
                     ${product.grade}
                   </span>
-
 
                   <a
                     href="${product.officialUrl}"
@@ -359,14 +350,12 @@ function renderSuppliers(
 
           </div>
 
-
         </article>
 
       `
     ).join("");
 
 }
-
 
 
 function showError(
@@ -381,7 +370,7 @@ function showError(
     message;
 
 
-  supplierContainer.innerHTML = `
+  ingredientContainer.innerHTML = `
 
     <div class="directory-placeholder">
 
@@ -398,7 +387,6 @@ function showError(
   `;
 
 }
-
 
 
 loadIngredient();
