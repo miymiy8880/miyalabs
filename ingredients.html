@@ -1,226 +1,196 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cosmetic Ingredients | Miya Labs</title>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Cosmetic Ingredient Database | Miya Labs
+  </title>
 
   <meta
     name="description"
-    content="Explore cosmetic ingredients, their functions, formulation considerations, INCI names, and practical usage information."
+    content="Search the Miya Labs cosmetic ingredient database by ingredient name, INCI name, CAS number, or category."
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
+
 
 <body>
 
+
 <header class="site-header">
 
-  <a class="brand" href="index.html">
+  <a
+    class="brand"
+    href="index.html"
+  >
     MIYA<span>LABS</span>
   </a>
 
+
   <nav>
-    <a href="ingredients.html">Ingredients</a>
-    <a href="index.html#formulation">Formulation</a>
-    <a href="index.html#suppliers">Suppliers</a>
-    <a href="index.html#guides">Guides</a>
+
+    <a href="ingredients.html">
+      Ingredients
+    </a>
+
+    <a href="index.html#formulation">
+      Formulation
+    </a>
+
+    <a href="suppliers.html">
+      Suppliers
+    </a>
+
+    <a href="index.html#guides">
+      Guides
+    </a>
+
   </nav>
 
 </header>
 
 
+
 <main>
+
 
 <section class="hero">
 
-  <p class="eyebrow">MIYA LABS INGREDIENT LIBRARY</p>
+  <p class="eyebrow">
+    MIYA LABS INGREDIENT DATABASE
+  </p>
+
 
   <h1>
-    Cosmetic ingredients,
-    <em>decoded.</em>
+
+    Search
+    <em>ingredients.</em>
+
   </h1>
 
+
   <p class="hero-copy">
-    Explore ingredient functions, INCI names, formulation
-    considerations, and practical information for cosmetic
-    formulation.
+
+    Search cosmetic ingredients by name,
+    INCI name, CAS number, category,
+    or common alias.
+
   </p>
+
+
+  <div class="supplier-search">
+
+    <input
+      id="ingredient-search"
+      type="search"
+      placeholder="Search niacinamide, CAS 98-92-0..."
+      aria-label="Search ingredients"
+    >
+
+
+    <select
+      id="ingredient-category"
+      aria-label="Filter ingredients by category"
+    >
+
+      <option value="all">
+        All categories
+      </option>
+
+      <option value="Active">
+        Actives
+      </option>
+
+      <option value="Humectant">
+        Humectants
+      </option>
+
+      <option value="Emollient">
+        Emollients
+      </option>
+
+      <option value="Preservative">
+        Preservatives
+      </option>
+
+      <option value="Emulsifier">
+        Emulsifiers
+      </option>
+
+    </select>
+
+  </div>
 
 </section>
 
 
+
 <section class="section">
+
 
   <div class="section-heading">
 
     <div>
 
       <p class="eyebrow">
-        BROWSE THE DATABASE
+        DATABASE
       </p>
 
+
       <h2>
-        Ingredient library
+        Ingredients
       </h2>
 
     </div>
 
+
     <p>
-      Select an ingredient to explore its properties,
-      applications, formulation considerations, and suppliers.
+
+      Each ingredient connects to its
+      technical profile and associated
+      suppliers.
+
     </p>
 
   </div>
 
 
-  <div class="cards">
 
-    <article class="card">
+  <div
+    id="ingredient-results"
+    class="supplier-results"
+  >
 
-      <span>ACTIVE</span>
+    <div class="directory-placeholder">
 
-      <h3>
-        Niacinamide
-      </h3>
+      <strong>
+        Loading ingredients...
+      </strong>
 
-      <p>
-        Vitamin B3 derivative widely used in skincare
-        formulations.
-      </p>
-
-      <a href="ingredients/niacinamide.html">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>HUMECTANT</span>
-
-      <h3>
-        Hyaluronic Acid
-      </h3>
-
-      <p>
-        A family of hyaluronan ingredients used primarily
-        for hydration and skin conditioning.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>CONDITIONING</span>
-
-      <h3>
-        Panthenol
-      </h3>
-
-      <p>
-        A provitamin of pantothenic acid used in
-        skin and hair formulations.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>BRIGHTENING</span>
-
-      <h3>
-        Alpha-Arbutin
-      </h3>
-
-      <p>
-        A cosmetic skin-conditioning ingredient commonly
-        used in formulations targeting uneven pigmentation.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>SOOTHING</span>
-
-      <h3>
-        Allantoin
-      </h3>
-
-      <p>
-        A skin-conditioning ingredient used in a variety
-        of cosmetic formulations.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>EMOLLIENT</span>
-
-      <h3>
-        Squalane
-      </h3>
-
-      <p>
-        An emollient used to improve skin feel and
-        formulation aesthetics.
-      </p>
-
-      <a href="#">
-        Explore →
-      </a>
-
-    </article>
+    </div>
 
   </div>
 
-</section>
-
-
-<section class="section">
-
-  <p class="eyebrow">
-    COMING SOON
-  </p>
-
-  <h2>
-    Search the ingredient database.
-  </h2>
-
-  <p class="hero-copy">
-    Miya Labs will eventually allow users to search ingredients
-    by INCI name, function, category, CAS number, formulation
-    role, and supplier.
-  </p>
 
 </section>
+
 
 </main>
+
 
 
 <footer>
@@ -229,9 +199,11 @@
     MIYA<span>LABS</span>
   </div>
 
+
   <p>
     Cosmetic ingredients · formulation · supplier intelligence
   </p>
+
 
   <div class="footer-links">
 
@@ -243,21 +215,24 @@
       Ingredients
     </a>
 
-    <a href="#">
-      Contact
-    </a>
-
-    <a href="#">
-      Privacy
+    <a href="suppliers.html">
+      Suppliers
     </a>
 
   </div>
 
+
   <small>
-    © 2026 Miya Labs. Educational content only; not medical advice.
+    © 2026 Miya Labs.
   </small>
 
 </footer>
 
+
+
+<script src="ingredients.js"></script>
+
+
 </body>
+
 </html>
