@@ -178,7 +178,7 @@ function renderIngredients() {
 
         <a
           class="text-link"
-          href="${ingredient.page}"
+          href="ingredient.html?id=${ingredient.id}"
         >
           View ingredient profile →
         </a>
