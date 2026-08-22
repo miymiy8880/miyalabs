@@ -1,5 +1,6 @@
 {
   "ingredients": [
+
     {
       "id": "niacinamide",
       "name": "Niacinamide",
@@ -16,6 +17,139 @@
         "makingcosmetics-niacinamide",
         "puriphase-niacinamide"
       ]
+    },
+
+
+    {
+      "id": "hyaluronic-acid",
+      "name": "Hyaluronic Acid",
+      "inci": "Hyaluronic Acid",
+      "cas": "9004-61-9",
+      "category": "Humectant",
+      "aliases": [
+        "Hyaluronan"
+      ],
+      "page": "ingredients/hyaluronic-acid.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "sodium-hyaluronate",
+      "name": "Sodium Hyaluronate",
+      "inci": "Sodium Hyaluronate",
+      "cas": "9067-32-7",
+      "category": "Humectant",
+      "aliases": [
+        "Sodium Hyaluronate"
+      ],
+      "page": "ingredients/sodium-hyaluronate.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "panthenol",
+      "name": "Panthenol",
+      "inci": "Panthenol",
+      "cas": "81-13-0",
+      "category": "Humectant",
+      "aliases": [
+        "Provitamin B5",
+        "D-Panthenol",
+        "Dexpanthenol"
+      ],
+      "page": "ingredients/panthenol.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "glycerin",
+      "name": "Glycerin",
+      "inci": "Glycerin",
+      "cas": "56-81-5",
+      "category": "Humectant",
+      "aliases": [
+        "Glycerol",
+        "Glycerine"
+      ],
+      "page": "ingredients/glycerin.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "allantoin",
+      "name": "Allantoin",
+      "inci": "Allantoin",
+      "cas": "97-59-6",
+      "category": "Active",
+      "aliases": [
+        "5-Ureidohydantoin"
+      ],
+      "page": "ingredients/allantoin.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "salicylic-acid",
+      "name": "Salicylic Acid",
+      "inci": "Salicylic Acid",
+      "cas": "69-72-7",
+      "category": "Active",
+      "aliases": [
+        "2-Hydroxybenzoic Acid",
+        "BHA"
+      ],
+      "page": "ingredients/salicylic-acid.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "ascorbic-acid",
+      "name": "Ascorbic Acid",
+      "inci": "Ascorbic Acid",
+      "cas": "50-81-7",
+      "category": "Active",
+      "aliases": [
+        "Vitamin C",
+        "L-Ascorbic Acid"
+      ],
+      "page": "ingredients/ascorbic-acid.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "tocopherol",
+      "name": "Tocopherol",
+      "inci": "Tocopherol",
+      "cas": "59-02-9",
+      "category": "Active",
+      "aliases": [
+        "Vitamin E",
+        "Alpha-Tocopherol"
+      ],
+      "page": "ingredients/tocopherol.html",
+      "supplierIds": []
+    },
+
+
+    {
+      "id": "caffeine",
+      "name": "Caffeine",
+      "inci": "Caffeine",
+      "cas": "58-08-2",
+      "category": "Active",
+      "aliases": [
+        "1,3,7-Trimethylxanthine"
+      ],
+      "page": "ingredients/caffeine.html",
+      "supplierIds": []
     }
+
   ]
 }
