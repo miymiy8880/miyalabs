@@ -12,13 +12,12 @@
   >
 
   <title>
-    Ingredient | Miya Labs
+    Ingredient Library | Miya Labs
   </title>
 
   <meta
-    id="meta-description"
     name="description"
-    content="Cosmetic ingredient information from Miya Labs."
+    content="Search the Miya Labs cosmetic ingredient library by ingredient name, INCI name, CAS number, alias, or category."
   >
 
   <link
@@ -37,14 +36,20 @@
   <a
     class="brand"
     href="index.html"
+    aria-label="Miya Labs home"
   >
+
     MIYA<span>LABS</span>
+
   </a>
 
 
-  <nav>
+  <nav aria-label="Main navigation">
 
-    <a href="ingredients.html">
+    <a
+      href="ingredients.html"
+      class="active"
+    >
       Ingredients
     </a>
 
@@ -69,86 +74,70 @@
 <main>
 
 
-<section class="hero">
+<section class="page-intro">
 
-  <p
-    class="eyebrow"
-    id="ingredient-category"
-  >
-    INGREDIENT
+  <p class="eyebrow">
+    MIYA LABS DATABASE
   </p>
 
 
-  <h1 id="ingredient-name">
-    Loading...
+  <h1>
+    Ingredient Library
   </h1>
 
 
-  <p
-    class="hero-copy"
-    id="ingredient-description"
-  >
-    Loading ingredient information...
+  <p>
+
+    Explore cosmetic ingredients by chemical
+    identity, category, aliases, and supplier
+    availability.
+
   </p>
 
 </section>
 
 
 
-<section class="section">
+<section class="directory-controls">
+
+  <div class="search-field">
+
+    <label
+      for="ingredient-search"
+    >
+      Search ingredients
+    </label>
 
 
-  <p class="eyebrow">
-    CHEMICAL IDENTITY
-  </p>
+    <input
+      id="ingredient-search"
+      type="search"
+      placeholder="Name, INCI, CAS number, alias..."
+      autocomplete="off"
+    >
+
+  </div>
 
 
-  <h2>
-    At a glance
-  </h2>
+
+  <div class="filter-field">
+
+    <label
+      for="ingredient-category"
+    >
+      Category
+    </label>
 
 
-  <div class="cards">
+    <select
+      id="ingredient-category"
+    >
 
+      <option value="all">
+        All categories
+      </option>
 
-    <article class="card">
-
-      <span>
-        INCI
-      </span>
-
-      <h3 id="ingredient-inci">
-        —
-      </h3>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>
-        CAS
-      </span>
-
-      <h3 id="ingredient-cas">
-        —
-      </h3>
-
-    </article>
-
-
-    <article class="card">
-
-      <span>
-        CATEGORY
-      </span>
-
-      <h3 id="ingredient-category-card">
-        —
-      </h3>
-
-    </article>
-
+    </select>
 
   </div>
 
@@ -156,155 +145,25 @@
 
 
 
-<section class="feature">
-
-
-  <div>
-
-    <p class="eyebrow">
-      INGREDIENT OVERVIEW
-    </p>
-
-
-    <h2 id="overview-title">
-      About this ingredient
-    </h2>
-
-
-    <p id="overview-text">
-      Loading...
-    </p>
-
-  </div>
-
+<section
+  class="directory-section"
+  aria-live="polite"
+>
 
   <div
-    class="formula-mark"
-    aria-hidden="true"
-  >
-
-    <span id="ingredient-symbol">
-      M
-    </span>
-
-    <small>
-      LAB
-    </small>
-
-  </div>
-
-
-</section>
-
-
-
-<section class="section">
-
-
-  <p class="eyebrow">
-    SUPPLIER INTELLIGENCE
-  </p>
-
-
-  <h2>
-    Where can you source it?
-  </h2>
-
-
-  <p class="hero-copy">
-
-    Suppliers connected to this ingredient
-    are pulled from the Miya Labs supplier
-    database.
-
-  </p>
-
-
-  <div
-    id="ingredient-suppliers"
-    class="supplier-results"
+    id="ingredient-results"
+    class="ingredient-grid"
   >
 
     <div class="directory-placeholder">
 
       <strong>
-        Loading suppliers...
+        Loading ingredients...
       </strong>
 
     </div>
 
   </div>
-
-
-</section>
-
-
-
-<section class="section">
-
-
-  <p class="eyebrow">
-    ALIASES
-  </p>
-
-
-  <h2>
-    Also known as
-  </h2>
-
-
-  <div
-    id="ingredient-aliases"
-    class="cards"
-  >
-  </div>
-
-
-</section>
-
-
-
-<section class="section">
-
-
-  <p class="eyebrow">
-    TECHNICAL SOURCES
-  </p>
-
-
-  <h2>
-    References
-  </h2>
-
-
-  <div class="guide-list">
-
-
-    <a
-      href="https://pubchem.ncbi.nlm.nih.gov/"
-      target="_blank"
-      rel="noopener"
-    >
-
-      <span>
-        01
-      </span>
-
-
-      <strong>
-        PubChem
-      </strong>
-
-
-      <small>
-        Chemical information and identifiers
-      </small>
-
-    </a>
-
-
-  </div>
-
 
 </section>
 
@@ -321,7 +180,8 @@
 
 
   <p>
-    Cosmetic ingredients · formulation · supplier intelligence
+    Cosmetic ingredients · formulation ·
+    supplier intelligence
   </p>
 
 
@@ -350,7 +210,7 @@
 
 
 
-<script src="ingredient-page.js"></script>
+<script src="ingredients.js"></script>
 
 
 </body>
