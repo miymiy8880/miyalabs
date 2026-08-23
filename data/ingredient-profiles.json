@@ -1,0 +1,301 @@
+{
+  "niacinamide": {
+    "title": "Niacinamide",
+    "symbol": "B3",
+    "lead": "A vitamin B3 derivative widely used in cosmetic formulations.",
+    "overviewTitle": "What is niacinamide?",
+    "overview": [
+      "Niacinamide, also known as nicotinamide, is a form of vitamin B3. It is widely used as a cosmetic formulation ingredient.",
+      "Its use should be assessed in the context of the complete formulation, intended application, concentration, product format, and applicable regulatory requirements."
+    ],
+    "considerations": [
+      {
+        "title": "Concentration",
+        "text": "Select concentration according to the intended product, formulation objectives, technical documentation, and applicable regulatory requirements."
+      },
+      {
+        "title": "pH",
+        "text": "Consider the pH of the complete formulation and the compatibility of niacinamide with the other components."
+      },
+      {
+        "title": "Stability",
+        "text": "Evaluate stability under the actual manufacturing, packaging, storage, and use conditions of the finished product."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Niacinamide"
+    }
+  },
+
+  "hyaluronic-acid": {
+    "title": "Hyaluronic Acid",
+    "symbol": "HA",
+    "lead": "A polysaccharide used in cosmetic formulations primarily for its water-binding and film-forming properties.",
+    "overviewTitle": "What is hyaluronic acid?",
+    "overview": [
+      "Hyaluronic acid is a naturally occurring polysaccharide composed of repeating disaccharide units. In cosmetic products, hyaluronic acid and related hyaluronates are used as formulation ingredients with water-binding properties.",
+      "Cosmetic performance can vary according to molecular characteristics, concentration, formulation system and processing conditions."
+    ],
+    "considerations": [
+      {
+        "title": "Molecular characteristics",
+        "text": "Molecular weight and related material characteristics can influence the sensory and formulation properties of hyaluronic-acid ingredients."
+      },
+      {
+        "title": "Hydration",
+        "text": "Consider the hydration behaviour of the raw material and the complete formulation during processing."
+      },
+      {
+        "title": "Stability",
+        "text": "Evaluate stability in the finished formulation under intended processing, storage and use conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Hyaluronic-acid"
+    }
+  },
+
+  "sodium-hyaluronate": {
+    "title": "Sodium Hyaluronate",
+    "symbol": "HA",
+    "lead": "The sodium salt of hyaluronic acid, widely used in cosmetic formulation systems.",
+    "overviewTitle": "What is sodium hyaluronate?",
+    "overview": [
+      "Sodium hyaluronate is the sodium salt of hyaluronic acid and is commonly used as a cosmetic formulation ingredient.",
+      "Its formulation behaviour depends on material characteristics, concentration, processing conditions and the composition of the finished product."
+    ],
+    "considerations": [
+      {
+        "title": "Material characteristics",
+        "text": "Molecular characteristics and raw-material specifications can influence formulation behaviour."
+      },
+      {
+        "title": "Dispersion",
+        "text": "Consider the method used to disperse and hydrate the material during manufacturing."
+      },
+      {
+        "title": "Finished-product stability",
+        "text": "Evaluate stability in the complete formulation under intended storage and use conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Sodium-hyaluronate"
+    }
+  },
+
+  "panthenol": {
+    "title": "Panthenol",
+    "symbol": "B5",
+    "lead": "A provitamin B5 ingredient used in cosmetic formulations for skin and hair-care applications.",
+    "overviewTitle": "What is panthenol?",
+    "overview": [
+      "Panthenol is the alcohol analogue of pantothenic acid and is commonly used as a cosmetic formulation ingredient.",
+      "Different forms and grades may have different specifications and formulation characteristics."
+    ],
+    "considerations": [
+      {
+        "title": "Grade",
+        "text": "Verify the identity, stereochemical form and specification of the raw material supplied for the intended formulation."
+      },
+      {
+        "title": "Solubility",
+        "text": "Consider the material's solubility and incorporation method within the formulation."
+      },
+      {
+        "title": "Stability",
+        "text": "Evaluate stability within the complete formulation and under intended processing and storage conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Panthenol"
+    }
+  },
+
+  "glycerin": {
+    "title": "Glycerin",
+    "symbol": "GLY",
+    "lead": "A polyol widely used in cosmetics and personal-care formulations.",
+    "overviewTitle": "What is glycerin?",
+    "overview": [
+      "Glycerin, also known as glycerol, is a three-carbon polyol widely used in cosmetic and personal-care formulations.",
+      "Its functional contribution depends on concentration and the characteristics of the complete formulation."
+    ],
+    "considerations": [
+      {
+        "title": "Concentration",
+        "text": "Consider the concentration required for the intended formulation objective and sensory profile."
+      },
+      {
+        "title": "Humectancy",
+        "text": "Glycerin is commonly incorporated as a humectant and can influence the water-binding behaviour of a formulation."
+      },
+      {
+        "title": "Sensory properties",
+        "text": "Higher concentrations can influence viscosity, tack and overall sensory characteristics."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Glycerol"
+    }
+  },
+
+  "allantoin": {
+    "title": "Allantoin",
+    "symbol": "AL",
+    "lead": "A heterocyclic compound used as a cosmetic skin-conditioning ingredient.",
+    "overviewTitle": "What is allantoin?",
+    "overview": [
+      "Allantoin is a naturally occurring compound that is also manufactured synthetically for use in various applications, including cosmetics.",
+      "Its use in a formulation should be evaluated according to the intended product and applicable regulatory requirements."
+    ],
+    "considerations": [
+      {
+        "title": "Solubility",
+        "text": "Consider the solubility characteristics of allantoin when determining the manufacturing process."
+      },
+      {
+        "title": "Processing",
+        "text": "The order and conditions of addition can influence incorporation into the finished formulation."
+      },
+      {
+        "title": "Stability",
+        "text": "Evaluate the stability of the complete formulation under intended processing and storage conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Allantoin"
+    }
+  },
+
+  "salicylic-acid": {
+    "title": "Salicylic Acid",
+    "symbol": "SA",
+    "lead": "An aromatic hydroxy acid used in cosmetic and personal-care formulations.",
+    "overviewTitle": "What is salicylic acid?",
+    "overview": [
+      "Salicylic acid is an aromatic hydroxy acid used in a range of cosmetic and personal-care formulations.",
+      "Its permitted uses and concentration limits can vary by jurisdiction and product category."
+    ],
+    "considerations": [
+      {
+        "title": "Regulatory requirements",
+        "text": "Check the regulations applicable to the target market and product category before formulation."
+      },
+      {
+        "title": "Solubility",
+        "text": "Consider the solubility characteristics of salicylic acid and the selected formulation system."
+      },
+      {
+        "title": "pH",
+        "text": "Evaluate the pH of the complete formulation and its relationship to the intended product characteristics."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Salicylic-acid"
+    }
+  },
+
+  "ascorbic-acid": {
+    "title": "Ascorbic Acid",
+    "symbol": "C",
+    "lead": "A water-soluble vitamin and antioxidant used in cosmetic formulations.",
+    "overviewTitle": "What is ascorbic acid?",
+    "overview": [
+      "Ascorbic acid, commonly known as vitamin C, is a water-soluble vitamin used in cosmetic formulations.",
+      "Formulation design can be challenging because chemical stability depends on the formulation environment and processing conditions."
+    ],
+    "considerations": [
+      {
+        "title": "Stability",
+        "text": "Evaluate stability carefully under the intended formulation, packaging, storage and use conditions."
+      },
+      {
+        "title": "pH",
+        "text": "The formulation pH can be an important consideration when working with ascorbic acid."
+      },
+      {
+        "title": "Packaging",
+        "text": "Packaging selection should be evaluated alongside the formulation's sensitivity to environmental conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Ascorbic-acid"
+    }
+  },
+
+  "tocopherol": {
+    "title": "Tocopherol",
+    "symbol": "E",
+    "lead": "A vitamin E compound used in cosmetic formulations, including as an antioxidant ingredient.",
+    "overviewTitle": "What is tocopherol?",
+    "overview": [
+      "Tocopherol refers to a family of vitamin E compounds. Tocopherol is used as a cosmetic ingredient in a variety of formulation systems.",
+      "The properties of a particular raw material depend on its specific identity, composition and supplier specification."
+    ],
+    "considerations": [
+      {
+        "title": "Identity",
+        "text": "Verify the specific tocopherol material and supplier specification before formulation."
+      },
+      {
+        "title": "Oil phase",
+        "text": "Consider the formulation phase and incorporation method when using tocopherol."
+      },
+      {
+        "title": "Oxidative stability",
+        "text": "Evaluate the complete formulation and packaging system for stability under intended storage conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Tocopherol"
+    }
+  },
+
+  "caffeine": {
+    "title": "Caffeine",
+    "symbol": "CAF",
+    "lead": "A methylxanthine compound used in cosmetic and personal-care formulations.",
+    "overviewTitle": "What is caffeine?",
+    "overview": [
+      "Caffeine is a methylxanthine compound found naturally in several plant species and used as a cosmetic formulation ingredient.",
+      "Its use should be evaluated according to the intended product, formulation system and applicable regulatory requirements."
+    ],
+    "considerations": [
+      {
+        "title": "Solubility",
+        "text": "Consider caffeine's solubility and the composition of the formulation when selecting the incorporation method."
+      },
+      {
+        "title": "Processing",
+        "text": "Evaluate the manufacturing process and order of addition to ensure appropriate incorporation."
+      },
+      {
+        "title": "Stability",
+        "text": "Evaluate stability within the complete formulation under intended processing and storage conditions."
+      }
+    ],
+    "reference": {
+      "name": "PubChem",
+      "description": "Chemical identity and identifiers",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Caffeine"
+    }
+  }
+}
