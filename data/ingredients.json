@@ -1,6 +1,5 @@
 {
   "ingredients": [
-
     {
       "id": "niacinamide",
       "name": "Niacinamide",
@@ -13,13 +12,10 @@
       ],
       "page": "ingredients/niacinamide.html",
       "supplierIds": [
-        "dsm-firmenich-niacinamide-pc",
-        "makingcosmetics-niacinamide",
-        "puriphase-niacinamide"
+        "dsm-firmenich-niacinamide",
+        "makingcosmetics-niacinamide"
       ]
     },
-
-
     {
       "id": "hyaluronic-acid",
       "name": "Hyaluronic Acid",
@@ -32,8 +28,6 @@
       "page": "ingredients/hyaluronic-acid.html",
       "supplierIds": []
     },
-
-
     {
       "id": "sodium-hyaluronate",
       "name": "Sodium Hyaluronate",
@@ -41,13 +35,11 @@
       "cas": "9067-32-7",
       "category": "Humectant",
       "aliases": [
-        "Sodium Hyaluronate"
+        "Hyaluronic Acid Sodium Salt"
       ],
       "page": "ingredients/sodium-hyaluronate.html",
       "supplierIds": []
     },
-
-
     {
       "id": "panthenol",
       "name": "Panthenol",
@@ -62,8 +54,6 @@
       "page": "ingredients/panthenol.html",
       "supplierIds": []
     },
-
-
     {
       "id": "glycerin",
       "name": "Glycerin",
@@ -77,22 +67,18 @@
       "page": "ingredients/glycerin.html",
       "supplierIds": []
     },
-
-
     {
       "id": "allantoin",
       "name": "Allantoin",
       "inci": "Allantoin",
       "cas": "97-59-6",
-      "category": "Active",
+      "category": "Skin Conditioning",
       "aliases": [
         "5-Ureidohydantoin"
       ],
       "page": "ingredients/allantoin.html",
       "supplierIds": []
     },
-
-
     {
       "id": "salicylic-acid",
       "name": "Salicylic Acid",
@@ -106,14 +92,12 @@
       "page": "ingredients/salicylic-acid.html",
       "supplierIds": []
     },
-
-
     {
       "id": "ascorbic-acid",
       "name": "Ascorbic Acid",
       "inci": "Ascorbic Acid",
       "cas": "50-81-7",
-      "category": "Active",
+      "category": "Antioxidant",
       "aliases": [
         "Vitamin C",
         "L-Ascorbic Acid"
@@ -121,14 +105,12 @@
       "page": "ingredients/ascorbic-acid.html",
       "supplierIds": []
     },
-
-
     {
       "id": "tocopherol",
       "name": "Tocopherol",
       "inci": "Tocopherol",
       "cas": "59-02-9",
-      "category": "Active",
+      "category": "Antioxidant",
       "aliases": [
         "Vitamin E",
         "Alpha-Tocopherol"
@@ -136,8 +118,6 @@
       "page": "ingredients/tocopherol.html",
       "supplierIds": []
     },
-
-
     {
       "id": "caffeine",
       "name": "Caffeine",
@@ -150,6 +130,5 @@
       "page": "ingredients/caffeine.html",
       "supplierIds": []
     }
-
   ]
 }
