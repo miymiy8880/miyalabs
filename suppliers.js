@@ -1,52 +1,174 @@
-const supplierContainer = document.getElementById("supplier-results");
-const searchInput = document.getElementById("supplier-search");
-const typeFilter = document.getElementById("supplier-type");
+const supplierResults =
+  document.getElementById(
+    "supplier-results"
+  );
+
+
+const supplierSearch =
+  document.getElementById(
+    "supplier-search"
+  );
+
+
+const supplierType =
+  document.getElementById(
+    "supplier-type"
+  );
+
 
 let suppliers = [];
 
+
+
+/*
+  Load supplier database
+*/
+
 async function loadSuppliers() {
+
   try {
-    const response = await fetch("data/suppliers.json");
+
+    const response =
+      await fetch(
+        "data/suppliers.json"
+      );
+
 
     if (!response.ok) {
-      throw new Error("Could not load supplier database.");
+
+      throw new Error(
+        "Supplier database could not be loaded."
+      );
+
     }
 
-    suppliers = await response.json();
+
+    const data =
+      await response.json();
+
+
+    suppliers =
+      Array.isArray(data.suppliers)
+        ? data.suppliers
+        : [];
+
+
+    populateSupplierTypes();
 
     renderSuppliers();
 
+
   } catch (error) {
-    supplierContainer.innerHTML = `
+
+    console.error(error);
+
+
+    supplierResults.innerHTML = `
+
       <div class="directory-placeholder">
-        <strong>Supplier database unavailable</strong>
+
+        <strong>
+          Supplier database unavailable
+        </strong>
+
         <span>
-          The supplier data could not be loaded.
-          Please try again later.
+          Please try refreshing the page.
         </span>
+
       </div>
+
     `;
+
   }
+
 }
 
 
-function renderSuppliers() {
+
+/*
+  Supplier type filter
+*/
+
+function populateSupplierTypes() {
+
+  const types =
+    [
+      ...new Set(
+        suppliers.map(
+          supplier => supplier.type
+        )
+      )
+    ].sort();
+
+
+  types.forEach(type => {
+
+    const option =
+      document.createElement(
+        "option"
+      );
+
+
+    option.value =
+      type;
+
+
+    option.textContent =
+      capitalize(type);
+
+
+    supplierType.appendChild(
+      option
+    );
+
+  });
+
+}
+
+
+
+/*
+  Filter suppliers
+*/
+
+function getFilteredSuppliers() {
 
   const searchTerm =
-    searchInput.value.toLowerCase().trim();
+    supplierSearch.value
+      .toLowerCase()
+      .trim();
+
 
   const selectedType =
-    typeFilter.value;
+    supplierType.value;
 
 
-  const filtered =
-    suppliers.suppliers.filter(supplier => {
+  return suppliers.filter(
+    supplier => {
+
+      const searchableText = [
+
+        supplier.name,
+
+        supplier.country,
+
+        supplier.type,
+
+        ...(supplier.ingredients || []),
+
+        ...(supplier.products || [])
+          .map(
+            product => product.name
+          )
+
+      ]
+        .join(" ")
+        .toLowerCase();
+
 
       const matchesSearch =
-        supplier.name.toLowerCase().includes(searchTerm) ||
-        supplier.ingredients.some(
-          ingredient =>
-            ingredient.toLowerCase().includes(searchTerm)
+        searchableText.includes(
+          searchTerm
         );
 
 
@@ -55,99 +177,227 @@ function renderSuppliers() {
         supplier.type === selectedType;
 
 
-      return matchesSearch && matchesType;
+      return (
+        matchesSearch &&
+        matchesType
+      );
 
-    });
+    }
+  );
+
+}
+
+
+
+/*
+  Render supplier cards
+*/
+
+function renderSuppliers() {
+
+  const filtered =
+    getFilteredSuppliers();
 
 
   if (filtered.length === 0) {
 
-    supplierContainer.innerHTML = `
+    supplierResults.innerHTML = `
+
       <div class="directory-placeholder">
-        <strong>No suppliers found</strong>
+
+        <strong>
+          No suppliers found
+        </strong>
+
         <span>
-          Try another ingredient, company name,
-          or supplier type.
+          Try another supplier or ingredient.
         </span>
+
       </div>
+
     `;
 
     return;
+
   }
 
 
-  supplierContainer.innerHTML =
-    filtered.map(supplier => `
+  supplierResults.innerHTML =
+    filtered.map(
+      supplier => `
 
-      <article class="supplier-result">
-
-        <div class="supplier-meta">
-
-          <span>
-            ${supplier.type.toUpperCase()}
-          </span>
-
-          <span>
-            ${supplier.country}
-          </span>
-
-        </div>
+        <article
+          class="supplier-card"
+        >
 
 
-        <h3>
-          ${supplier.name}
-        </h3>
+          <div
+            class="supplier-card-top"
+          >
+
+            <span
+              class="supplier-type"
+            >
+              ${escapeHTML(
+                supplier.type
+              )}
+            </span>
 
 
-        <p>
-          Ingredients:
-          ${supplier.ingredients.join(", ")}
-        </p>
+            <span
+              class="supplier-country"
+            >
+              ${escapeHTML(
+                supplier.country
+              )}
+            </span>
+
+          </div>
 
 
-        <div class="supplier-products">
 
-          ${supplier.products.map(product => `
+          <h2>
 
-            <div class="supplier-product">
+            ${escapeHTML(
+              supplier.name
+            )}
 
-              <strong>
-                ${product.name}
-              </strong>
+          </h2>
 
-              <span>
-                ${product.grade}
-              </span>
 
-              <a
-                href="${product.officialUrl}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View supplier →
-              </a>
 
-            </div>
+          <p>
 
-          `).join("")}
+            <strong>
+              Ingredients
+            </strong>
 
-        </div>
+          </p>
 
-      </article>
 
-    `).join("");
+
+          <div
+            class="supplier-tags"
+          >
+
+            ${
+              (supplier.ingredients || [])
+                .map(
+                  ingredient => `
+                    <span>
+                      ${escapeHTML(
+                        ingredient
+                      )}
+                    </span>
+                  `
+                )
+                .join("")
+            }
+
+          </div>
+
+
+
+          <div
+            class="supplier-products"
+          >
+
+            ${
+              (supplier.products || [])
+                .map(
+                  product => `
+
+                    <div
+                      class="supplier-product"
+                    >
+
+                      <strong>
+                        ${escapeHTML(
+                          product.name
+                        )}
+                      </strong>
+
+
+                      <span>
+                        ${escapeHTML(
+                          product.grade
+                        )}
+                      </span>
+
+
+                      <a
+                        href="${escapeHTML(
+                          product.officialUrl
+                        )}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Official supplier →
+                      </a>
+
+                    </div>
+
+                  `
+                )
+                .join("")
+            }
+
+          </div>
+
+
+        </article>
+
+      `
+    ).join("");
+
 }
 
 
-searchInput.addEventListener(
+
+/*
+  Helpers
+*/
+
+function capitalize(value) {
+
+  return value.charAt(0).toUpperCase()
+    + value.slice(1);
+
+}
+
+
+function escapeHTML(value) {
+
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+
+/*
+  Events
+*/
+
+supplierSearch.addEventListener(
   "input",
   renderSuppliers
 );
 
-typeFilter.addEventListener(
+
+supplierType.addEventListener(
   "change",
   renderSuppliers
 );
 
+
+
+/*
+  Start
+*/
 
 loadSuppliers();
