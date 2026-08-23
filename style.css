@@ -965,3 +965,265 @@ footer small {
   }
 
 }
+
+  
+/* =========================================
+   MIYA LABS — SUPPLIER DIRECTORY
+   ========================================= */
+
+
+.supplier-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    1px;
+
+  background:
+    #dfe3e8;
+
+  border:
+    1px solid #dfe3e8;
+
+}
+
+
+.supplier-card {
+
+  padding:
+    30px;
+
+  min-height:
+    360px;
+
+  background:
+    #ffffff;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+}
+
+
+.supplier-card-top {
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    15px;
+
+  margin-bottom:
+    45px;
+
+}
+
+
+.supplier-type,
+.supplier-country {
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.11em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.supplier-type {
+
+  color:
+    #315f9b;
+
+}
+
+
+.supplier-country {
+
+  color:
+    #858b93;
+
+}
+
+
+.supplier-card h2 {
+
+  margin:
+    0 0 30px;
+
+  font-size:
+    32px;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -0.04em;
+
+}
+
+
+.supplier-card p {
+
+  margin:
+    0 0 12px;
+
+  font-size:
+    11px;
+
+  letter-spacing:
+    0.1em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    #70767e;
+
+}
+
+
+.supplier-tags {
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    7px;
+
+  margin-bottom:
+    30px;
+
+}
+
+
+.supplier-tags span {
+
+  padding:
+    7px 10px;
+
+  border:
+    1px solid #dfe3e8;
+
+  font-size:
+    12px;
+
+  color:
+    #4e555e;
+
+}
+
+
+.supplier-products {
+
+  margin-top:
+    auto;
+
+  border-top:
+    1px solid #e5e7ea;
+
+}
+
+
+.supplier-product {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:
+    8px;
+
+  padding:
+    16px 0;
+
+  border-bottom:
+    1px solid #e5e7ea;
+
+}
+
+
+.supplier-product strong {
+
+  font-size:
+    13px;
+
+}
+
+
+.supplier-product span {
+
+  font-size:
+    11px;
+
+  color:
+    #727982;
+
+}
+
+
+.supplier-product a {
+
+  grid-column:
+    1 / -1;
+
+  margin-top:
+    4px;
+
+  color:
+    #315f9b;
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+}
+
+
+.supplier-product a:hover {
+
+  text-decoration:
+    underline;
+
+}
+
+
+
+@media (max-width: 760px) {
+
+  .supplier-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
