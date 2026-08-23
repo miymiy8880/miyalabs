@@ -1,54 +1,40 @@
 {
-  "version": 1,
-  "lastUpdated": "2026-08-22",
   "suppliers": [
     {
-      "id": "dsm-firmenich-niacinamide-pc",
+      "id": "dsm-firmenich-niacinamide",
       "name": "dsm-firmenich",
       "type": "manufacturer",
-      "country": "Switzerland / global",
-      "ingredients": ["Niacinamide"],
+      "country": "Switzerland",
+      "ingredients": [
+        "Niacinamide"
+      ],
       "products": [
         {
           "name": "Niacinamide PC",
-          "category": "Vitamin B3 / active ingredient",
+          "category": "Vitamin B3",
           "grade": "Cosmetic",
-          "officialUrl": "https://www.dsm-firmenich.com/en/businesses/perfumery-beauty/beauty-care/products/niacinamide.html"
+          "officialUrl": "https://www.dsm-firmenich.com/"
         }
       ],
-      "source": "Official manufacturer product page"
+      "source": "Official company website"
     },
     {
       "id": "makingcosmetics-niacinamide",
       "name": "MakingCosmetics",
       "type": "supplier",
       "country": "United States",
-      "ingredients": ["Niacinamide"],
-      "products": [
-        {
-          "name": "Vitamin B3 / Niacinamide USP",
-          "category": "Vitamin B3",
-          "grade": "USP",
-          "officialUrl": "https://www.makingcosmetics.com/VIT-NIAC-01.html"
-        }
+      "ingredients": [
+        "Niacinamide"
       ],
-      "source": "Supplier product page"
-    },
-    {
-      "id": "puriphase-niacinamide",
-      "name": "Puriphase",
-      "type": "B2B supplier",
-      "country": "Europe",
-      "ingredients": ["Niacinamide"],
       "products": [
         {
           "name": "Niacinamide",
           "category": "Vitamin B3",
           "grade": "Cosmetic",
-          "officialUrl": "https://puriphase.eu/ingredients/niacinamide/"
+          "officialUrl": "https://www.makingcosmetics.com/"
         }
       ],
-      "source": "Supplier product page"
+      "source": "Official company website"
     }
   ]
 }
