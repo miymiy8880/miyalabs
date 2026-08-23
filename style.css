@@ -1226,4 +1226,142 @@ footer small {
   }
 
 }
+/* =========================================
+   RELATED INGREDIENTS
+   ========================================= */
 
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #dfe3e8;
+  border: 1px solid #dfe3e8;
+}
+
+
+.ingredient-card {
+  background: #ffffff;
+  padding: 28px;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ingredient-card-header {
+  margin-bottom: 35px;
+}
+
+
+.ingredient-category {
+  display: inline-block;
+  color: #315f9b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+
+.ingredient-card h3 {
+  margin: 0 0 24px;
+  font-size: 25px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+
+.ingredient-card p {
+  margin: 0 0 12px;
+  color: #646b73;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+.ingredient-card p strong {
+  color: #17191c;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+.ingredient-card .button {
+  margin-top: auto;
+}
+
+
+.button.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 11px 15px;
+  border: 1px solid #17191c;
+  background: #ffffff;
+  color: #17191c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+
+.button.secondary:hover {
+  background: #17191c;
+  color: #ffffff;
+}
+
+
+.directory-placeholder {
+  grid-column: 1 / -1;
+  min-height: 150px;
+  padding: 35px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+.directory-placeholder strong {
+  color: #17191c;
+  font-size: 14px;
+}
+
+
+.directory-placeholder span {
+  color: #737981;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 900px) {
+
+  .ingredient-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .ingredient-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .ingredient-card {
+    min-height: 240px;
+  }
+
+}
