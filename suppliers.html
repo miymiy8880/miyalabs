@@ -12,12 +12,12 @@
   >
 
   <title>
-    Cosmetic Ingredient Suppliers | Miya Labs
+    Supplier Directory | Miya Labs
   </title>
 
   <meta
     name="description"
-    content="Search cosmetic ingredient manufacturers and suppliers by ingredient and supplier type."
+    content="Explore cosmetic ingredient manufacturers and suppliers through the Miya Labs supplier directory."
   >
 
   <link
@@ -36,12 +36,15 @@
   <a
     class="brand"
     href="index.html"
+    aria-label="Miya Labs home"
   >
+
     MIYA<span>LABS</span>
+
   </a>
 
 
-  <nav>
+  <nav aria-label="Main navigation">
 
     <a href="ingredients.html">
       Ingredients
@@ -51,7 +54,10 @@
       Formulation
     </a>
 
-    <a href="suppliers.html">
+    <a
+      href="suppliers.html"
+      class="active"
+    >
       Suppliers
     </a>
 
@@ -68,102 +74,81 @@
 <main>
 
 
-<section class="hero">
+<section class="page-intro">
 
   <p class="eyebrow">
-    MIYA LABS SUPPLIER DIRECTORY
+    MIYA LABS DATABASE
   </p>
 
 
   <h1>
-
-    Find your
-    <em>ingredient source.</em>
-
+    Supplier Directory
   </h1>
 
 
-  <p class="hero-copy">
+  <p>
 
-    Search manufacturers and suppliers
-    of cosmetic raw materials.
+    Discover manufacturers and suppliers
+    connected to cosmetic ingredients.
 
   </p>
 
+</section>
 
-  <div class="supplier-search">
+
+
+<section class="directory-controls">
+
+
+  <div class="search-field">
+
+    <label for="supplier-search">
+      Search suppliers or ingredients
+    </label>
+
 
     <input
       id="supplier-search"
       type="search"
-      placeholder="Search an ingredient or supplier..."
-      aria-label="Search suppliers"
+      placeholder="Supplier, ingredient..."
+      autocomplete="off"
     >
 
+  </div>
 
-    <select
-      id="supplier-type"
-      aria-label="Filter supplier type"
-    >
+
+
+  <div class="filter-field">
+
+    <label for="supplier-type">
+      Supplier type
+    </label>
+
+
+    <select id="supplier-type">
 
       <option value="all">
-        All supplier types
-      </option>
-
-      <option value="manufacturer">
-        Manufacturers
-      </option>
-
-      <option value="supplier">
-        Suppliers
-      </option>
-
-      <option value="B2B supplier">
-        B2B suppliers
+        All suppliers
       </option>
 
     </select>
 
   </div>
 
+
 </section>
 
 
 
-<section class="section">
-
-
-  <div class="section-heading">
-
-    <div>
-
-      <p class="eyebrow">
-        DIRECTORY
-      </p>
-
-
-      <h2>
-        Supplier database
-      </h2>
-
-    </div>
-
-
-    <p>
-
-      Supplier information is organized
-      by ingredient, company type,
-      product, grade, and geography.
-
-    </p>
-
-  </div>
-
+<section
+  class="directory-section"
+  aria-live="polite"
+>
 
 
   <div
     id="supplier-results"
-    class="supplier-results"
+    class="supplier-grid"
   >
 
     <div class="directory-placeholder">
@@ -192,7 +177,8 @@
 
 
   <p>
-    Cosmetic ingredients · formulation · supplier intelligence
+    Cosmetic ingredients · formulation ·
+    supplier intelligence
   </p>
 
 
