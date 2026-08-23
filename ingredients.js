@@ -1,15 +1,18 @@
-const ingredientContainer =
+const ingredientResults =
   document.getElementById("ingredient-results");
 
-const searchInput =
+const ingredientSearch =
   document.getElementById("ingredient-search");
 
-const categoryFilter =
+const ingredientCategory =
   document.getElementById("ingredient-category");
-
 
 let ingredients = [];
 
+
+/*
+  Load ingredient database
+*/
 
 async function loadIngredients() {
 
@@ -18,28 +21,33 @@ async function loadIngredients() {
     const response =
       await fetch("data/ingredients.json");
 
-
     if (!response.ok) {
-      throw new Error(
-        "Could not load ingredient database."
-      );
-    }
 
+      throw new Error(
+        "Ingredient database could not be loaded."
+      );
+
+    }
 
     const data =
       await response.json();
 
-
     ingredients =
-      data.ingredients;
+      Array.isArray(data.ingredients)
+        ? data.ingredients
+        : [];
 
+    populateCategories();
 
     renderIngredients();
 
+  }
 
-  } catch (error) {
+  catch (error) {
 
-    ingredientContainer.innerHTML = `
+    console.error(error);
+
+    ingredientResults.innerHTML = `
 
       <div class="directory-placeholder">
 
@@ -48,7 +56,7 @@ async function loadIngredients() {
         </strong>
 
         <span>
-          Please try again later.
+          Please try refreshing the page.
         </span>
 
       </div>
@@ -60,22 +68,58 @@ async function loadIngredients() {
 }
 
 
+/*
+  Create category options
+*/
 
-function renderIngredients() {
+function populateCategories() {
+
+  const categories =
+    [...new Set(
+      ingredients.map(
+        ingredient => ingredient.category
+      )
+    )].sort();
+
+
+  categories.forEach(category => {
+
+    const option =
+      document.createElement("option");
+
+    option.value =
+      category;
+
+    option.textContent =
+      category;
+
+    ingredientCategory.appendChild(
+      option
+    );
+
+  });
+
+}
+
+
+/*
+  Search + filtering
+*/
+
+function getFilteredIngredients() {
 
   const searchTerm =
-    searchInput.value
+    ingredientSearch.value
       .toLowerCase()
       .trim();
 
 
-  const category =
-    categoryFilter.value;
+  const selectedCategory =
+    ingredientCategory.value;
 
 
-  const filtered =
-    ingredients.filter(ingredient => {
-
+  return ingredients.filter(
+    ingredient => {
 
       const searchableText = [
 
@@ -87,7 +131,7 @@ function renderIngredients() {
 
         ingredient.category,
 
-        ...ingredient.aliases
+        ...(ingredient.aliases || [])
 
       ]
         .join(" ")
@@ -95,12 +139,15 @@ function renderIngredients() {
 
 
       const matchesSearch =
-        searchableText.includes(searchTerm);
+        searchableText.includes(
+          searchTerm
+        );
 
 
       const matchesCategory =
-        category === "all" ||
-        ingredient.category === category;
+        selectedCategory === "all" ||
+        ingredient.category ===
+          selectedCategory;
 
 
       return (
@@ -108,12 +155,25 @@ function renderIngredients() {
         matchesCategory
       );
 
-    });
+    }
+  );
+
+}
+
+
+/*
+  Render ingredient cards
+*/
+
+function renderIngredients() {
+
+  const filtered =
+    getFilteredIngredients();
 
 
   if (filtered.length === 0) {
 
-    ingredientContainer.innerHTML = `
+    ingredientResults.innerHTML = `
 
       <div class="directory-placeholder">
 
@@ -122,8 +182,8 @@ function renderIngredients() {
         </strong>
 
         <span>
-          Try another ingredient,
-          INCI name, or CAS number.
+          Try another name, INCI name,
+          CAS number, or category.
         </span>
 
       </div>
@@ -135,72 +195,122 @@ function renderIngredients() {
   }
 
 
+  ingredientResults.innerHTML =
+    filtered.map(
+      ingredient => `
 
-  ingredientContainer.innerHTML =
-
-    filtered.map(ingredient => `
-
-      <article class="supplier-result">
-
-        <div class="supplier-meta">
-
-          <span>
-            ${ingredient.category.toUpperCase()}
-          </span>
-
-          <span>
-            CAS ${ingredient.cas}
-          </span>
-
-        </div>
-
-
-        <h3>
-          ${ingredient.name}
-        </h3>
-
-
-        <p>
-
-          <strong>INCI:</strong>
-          ${ingredient.inci}
-
-        </p>
-
-
-        <p>
-
-          <strong>Also known as:</strong>
-          ${ingredient.aliases.join(", ")}
-
-        </p>
-
-
-        <a
-          class="text-link"
-          href="ingredient.html?id=${ingredient.id}"
+        <article
+          class="ingredient-card"
         >
-          View ingredient profile →
-        </a>
 
-      </article>
+          <div
+            class="ingredient-card-top"
+          >
 
-    `).join("");
+            <span
+              class="ingredient-category"
+            >
+              ${escapeHTML(
+                ingredient.category
+              )}
+            </span>
+
+            <span
+              class="ingredient-cas"
+            >
+              CAS ${escapeHTML(
+                ingredient.cas
+              )}
+            </span>
+
+          </div>
+
+
+          <h2>
+            ${escapeHTML(
+              ingredient.name
+            )}
+          </h2>
+
+
+          <p
+            class="ingredient-inci"
+          >
+
+            INCI:
+            <strong>
+              ${escapeHTML(
+                ingredient.inci
+              )}
+            </strong>
+
+          </p>
+
+
+          <p
+            class="ingredient-aliases"
+          >
+
+            Also known as:
+            ${escapeHTML(
+              (ingredient.aliases || [])
+                .join(", ")
+            )}
+
+          </p>
+
+
+          <a
+            class="text-link"
+            href="${escapeHTML(
+              ingredient.page
+            )}"
+          >
+            View ingredient profile →
+          </a>
+
+        </article>
+
+      `
+    ).join("");
 
 }
 
 
+/*
+  Basic HTML escaping
+*/
 
-searchInput.addEventListener(
+function escapeHTML(value) {
+
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+/*
+  Events
+*/
+
+ingredientSearch.addEventListener(
   "input",
   renderIngredients
 );
 
 
-categoryFilter.addEventListener(
+ingredientCategory.addEventListener(
   "change",
   renderIngredients
 );
 
+
+/*
+  Start
+*/
 
 loadIngredients();
